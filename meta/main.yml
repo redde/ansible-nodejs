@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: Oleg Bovykin
+  description: Installs node.js from ppa repository
+  license: MIT
+  min_ansible_version: 1.4
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - lenny
+        - squeeze
+        - wheezy
+  categories:
+    - nodejs
+dependencies: []
