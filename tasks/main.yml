@@ -1,0 +1,13 @@
+---  
+- name: checks if nodejs is installed
+  command: 'node -v'
+  register: node_installed
+  ignore_errors: yes
+
+- name: Add node.js repository
+  apt_repository: repo=ppa:chris-lea/node.js
+  when: node_installed|failed
+
+- name: Install node.js from package
+  apt: name=nodejs state=latest update_cache=yes
+  when: node_installed|failed
